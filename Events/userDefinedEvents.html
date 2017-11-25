@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Onload Events</title>
+</head>
+<body>
+
+  <script>
+        function handleMouseOverEvent(element){
+          element.style.backgroundColor="green";
+          element.innerHTML = "your on me!";
+        }
+
+        function handleMouseOutEvent(element1){
+          element1.style.backgroundColor="blue";
+          element1.innerHTML = "your off me!";
+        }
+
+  </script>
+
+
+  <div onmouseover="handleMouseOverEvent(this);" onmouseout="handleMouseOutEvent(this);" style="height=100%; width=100%;background-color:yellow;">
+    change my properties by hovering over me!
+  </div>
+
+
+
+</body>
+</html>

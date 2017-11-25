@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>onMouseover - onMouseout</title>
+</head>
+<body>
+      <div style="width:50%; height:50%; background-color:blue;">
+        <h1 onMouseover="onMouseOn(this);" onmouseout="onMouseOff(this);">Hover over me!</h1>
+      </div>
+
+  <script>
+    function onMouseOn(element){
+      element.innerHTML = "mouse on!";
+    }
+
+    function onMouseOff(element){
+      element.innerHTML = "mouse off!";
+    }
+
+  </script>
+
+</body>
+</html>

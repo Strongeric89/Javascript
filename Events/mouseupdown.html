@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MOUSE DOWN UP</title>
+</head>
+<body>
+
+  <script>
+      function handleMouseDownEvent(element){
+          element.style.backgroundColor = "green";
+          element.innerHTML = "you mouse clicked me!";
+      }
+
+      function handleMouseUpEvent(element){
+        element.style.backgroundColor = "yellow";
+        element.innerHTML = "you released the mouse click on me!";
+      }
+
+
+      function handleMouseOutEvent(element){
+        element.style.backgroundColor = "red";
+        element.innerHTML = "you have left me";
+      }
+
+  </script>
+
+  <div onmousedown="handleMouseDownEvent(this);" onmouseup="handleMouseUpEvent(this);" onmouseout="handleMouseOutEvent(this);" style="width:300px; height:300px; background-color:red;">
+        click me!
+
+  </div>
+
+</body>
+</html>
