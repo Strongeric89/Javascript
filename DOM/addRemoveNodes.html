@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>add remove nodes</title>
+</head>
+<body>
+
+  <script>
+      function addNode(){
+
+        var parent = document.getElementById('nodeArea');
+        var child = document.createElement("h1");
+        var text = document.createTextNode("i am new");
+        child.id = "new";
+        child.appendChild(text);
+        parent.appendChild(child);
+      }
+
+      function removeNode(){
+
+        var parent = document.getElementById('nodeArea');
+        var child = document.getElementById("new");
+
+
+        parent.removeChild(child);
+      }
+
+  </script>
+
+  <input type="Button" value="click to add" onclick="addNode();">
+  <input type="Button" value="click to remove" onclick="removeNode();">
+
+  <div id="nodeArea">add here</div>
+
+</body>
+</html>

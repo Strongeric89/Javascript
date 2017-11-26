@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>onSubmit events</title>
+</head>
+<body>
+
+  <script>
+  var numberofGuesses = 0;
+
+
+    function handleOnSubmit(){
+
+      var name = document.form1.nametodisplay.value;
+      console.log(name);
+      if(name == "eric"){
+          alert('well done!');
+        numberofGuesses = 0;
+        return true;
+      }else{
+        alert('you did not enter the correct value: ' + numberofGuesses);
+          increment();
+      
+
+        return false;
+      }
+    }
+
+    function increment(){
+      numberofGuesses = numberofGuesses + 1;
+      console.log(numberofGuesses);
+
+
+    }
+
+
+
+  </script>
+  <h1 id="numGuesses">number of guesses: 0</h1>
+  <form action="" name="form1" onsubmit="return handleOnSubmit();">
+
+    <input type="text" name="nametodisplay">
+    <input type="submit" value="click to submit">
+  </form>
+
+
+
+</body>
+</html>

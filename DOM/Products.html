@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Products using DOM</title>
+</head>
+<body>
+  <h1>welcome to the products page.</h1>
+
+  <div id="nodeArea">
+    <h3 id="laptop">Laptop = €1000</h3>
+    <h3 id="cellphone">Cellphone = €300</h3>
+
+
+  </div>
+  <input type="text" id="itemname">
+  <input type="Button" onclick="addProduct();" value="add">
+  <input type="Button" onclick="removeProduct();" value="remove">
+
+
+  <script>
+
+    function addProduct(){
+      var parent = document.getElementById('nodeArea');
+      var child = document.createElement('h3');
+
+      var item = document.getElementById('itemname').value;
+      var text = document.createTextNode(item);
+      child.id = item;
+      child.appendChild(text);
+      parent.appendChild(child);
+
+
+
+
+    }
+    function removeProduct(){
+        var parent = document.getElementById('nodeArea');
+          var item = document.getElementById('itemname').value;
+          var child = document.getElementById(item);
+            parent.removeChild(child);
+
+
+
+
+
+    }
+
+  </script>
+
+</body>
+</html>

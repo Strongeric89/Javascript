@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>onChange background image</title>
+</head>
+<body>
+  <script>
+    function changeImage(x){
+      console.log(x);
+    document.body.style.backgroundImage = "url('"+x+"')"
+    }
+
+  </script>
+  Change the image of body.style.backgroundImage with onchange
+
+  <select onchange="changeImage(this.value);">
+    <option value=""></option>
+    <option value="images/eric.jpg">image 1</option>
+    <option value="images/eric2.jpg">image 2</option>
+
+  </select>
+
+
+</body>
+</html>

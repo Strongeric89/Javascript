@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>setTimeouts</title>
+</head>
+<body>
+  <script>
+      function handleOnclickHello(){
+        setTimeout(sayHey,5000);
+      }
+      function sayHey(){
+        alert('hey');
+      }
+
+  </script>
+  <button onclick="handleOnclickHello();">say hello, after 5 seconds</button>
+
+</body>
+</html>

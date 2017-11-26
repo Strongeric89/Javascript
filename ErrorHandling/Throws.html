@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>THROWING ERRORS</title>
+</head>
+<body>
+  enter age:
+  <input type="text" id="age">
+  <input type="Button" value="validate" onclick="validateAge();">
+    <p id="finallyMessage"></p>
+  <p id="errorMessage"></p>
+
+  <script>
+
+    function validateAge(){
+
+      try{
+        var age = document.getElementById('age').value;
+        if(age==""){
+          throw "age cannot be left blank";
+        }
+        if(age < 18){
+          throw "you must be over 18 to drink";
+        }
+
+        if(age >=18){
+          throw "";
+        }
+
+      }catch(obj){
+        document.getElementById('errorMessage').innerHTML = obj;
+      }finally{
+        document.getElementById('finallyMessage').innerHTML = "you entered a value: finally";
+      }
+
+    }
+
+  </script>
+
+</body>
+</html>

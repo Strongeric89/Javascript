@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document Object Model</title>
+</head>
+<body onload="handleHTML()">
+    <h5>The following is how to access the DOM</h5>
+
+      document.getElementById('id name');
+      document.getElementByClass('class name');
+      document.getElementByTagName('tag name');
+
+      <h1 id="heading1">access me by id</h1>
+      <h2 class="heading2">access me by class</h2>
+
+
+
+      <script>
+
+
+        function handleHTML(){
+
+
+          document.getElementById('heading1').innerHTML = "ACCESSED!";
+
+        /*
+
+              can use the following
+                document.getElementById('heading1') .align
+                                    //for image      .src = "new image"
+
+        */
+
+        }
+
+
+      </script>
+
+
+
+</body>
+</html>

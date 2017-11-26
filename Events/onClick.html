@@ -1,58 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>onClick events</title>
 </head>
+
 <body>
 
   <script>
-      function calculate(x){
-        var num1 = parseInt(document.calcform.number1.value); //gets the value from number 1 input
-        var num2 = parseInt(document.calcform.number2.value);
-        var result = 0;
-        switch(x){
-          case 1:{
-              result = num1 + num2;
-          }break;
-          case 2:{
-              result = num1 - num2;
-          }break;
-          case 3:{
-              result = num1 * num2;
-          }break;
-          case 4:{
-              result = num1 / num2;
-          }break;
-        }
+    function calculate(x) {
+      var num1 = parseInt(document.calcform.number1.value); //gets the value from number 1 input
+      var num2 = parseInt(document.calcform.number2.value);
+      var result = 0;
 
-        alert('answer is ' + result);
-
-        //clear the inputs
-        document.calcform.number1.value = "";
-        document.calcform.number2.value= "";
-
+      //for debugging - useful tool
+      console.log(num1);
+      console.log(num2);
+      //x was passed over with this. (access the value by using x.value)
+      switch (x.value) {
+        case "ADD":
+          {
+            result = num1 + num2;
+          }
+          break;
+        case "SUB":
+          {
+            result = num1 - num2;
+          }
+          break;
+        case "MUL":
+          {
+            result = num1 * num2;
+          }
+          break;
+        case "DIV":
+          {
+            result = num1 / num2;
+          }
+          break;
       }
 
+      alert('answer is ' + result);
+
+      //clear the inputs
+      document.calcform.number1.value = "";
+      document.calcform.number2.value = "";
+
+    }
   </script>
 
   <form action="" name="calcform">
-      Num1:
-      <input type="text" name="number1">
-      <br>
-      Num2:
-      <input type="text" name="number2">
-      <br>
-      <input type="Button" name="submit" value="ADD" onclick="calculate(1);"></button>
-      <input type="Button" name="submit" value="SUB" onclick="calculate(2);"></button>
-      <input type="Button" name="submit" value="MUL" onclick="calculate(3);"></button>
-      <input type="Button" name="submit" value="DIV" onclick="calculate(4);"></button>
+    Num1:
+    <input type="text" name="number1">
+    <br> Num2:
+    <input type="text" name="number2">
+    <br>
+    <input type="Button" name="submit" value="ADD" onclick="calculate(this);"></button>
+    <input type="Button" name="submit" value="SUB" onclick="calculate(this);"></button>
+    <input type="Button" name="submit" value="MUL" onclick="calculate(this);"></button>
+    <input type="Button" name="submit" value="DIV" onclick="calculate(this);"></button>
 
 
 
   </form>
 
 </body>
+
 </html>

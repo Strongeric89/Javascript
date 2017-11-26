@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>on focus on blue events</title>
+</head>
+<body>
+
+  <script>
+    function handleOnFocusEvent(x){
+      x.style.color="red";
+      x.style.backgroundColor = "blue";
+    }
+
+    function handleOnBlurEvent(x){
+      x.style.color = "black";
+      x.style.backgroundColor = "yellow";
+    }
+  </script>
+
+  <input type="text" value="eric" onfocus="handleOnFocusEvent(this);" onblur="handleOnBlurEvent(this);"/>
+
+</body>
+</html>

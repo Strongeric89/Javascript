@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>on key listeners</title>
+</head>
+<body onload="alert('page is loaded!')">
+  <script>
+    function handleonkeydown(){
+      document.bgColor = "red";
+
+
+
+    }
+
+    function handleonkeyup(){
+        document.bgColor = "yellow";
+
+    }
+
+    function handleonkeyPress(){
+        document.bgColor = "blue";
+
+    }
+
+  </script>
+
+  <input type="text" onkeydown="handleonkeydown();" onkeyup="handleonkeyup();" onkeypress="handleonkeyPress();" >
+
+</body>
+</html>
