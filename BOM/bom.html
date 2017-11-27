@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Browser Object Model</title>
+</head>
+<body>
+  <script>
+
+      /*
+      The Browser Object Model - the Window Object
+
+        alert(), confirm(), prompt()
+        setTimeout
+        setInterval
+        location
+
+    */
+    //screen resolution
+    document.write(window.screen.width,' X ', window.screen.height);
+
+    //history- back and forward
+    /*
+      window.history.forward();
+      window.history.back();
+
+
+    */
+
+    //navigator
+    document.write('<br>',navigator.appName);
+      document.write('<br>',navigator.appCodeName);
+        document.write('<br>',navigator.cookieEnabled);
+
+        for(x in navigator){
+          document.write('<br>',x);
+        }
+
+  
+
+
+
+  </script>
+
+</body>
+</html>

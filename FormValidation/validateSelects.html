@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Validate Selects</title>
+</head>
+<body>
+
+    <form action="" name="form1" onsubmit="return validateSelects();">
+
+      <select name="menu" id="menu">
+        <option value="default">Select an option</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+      <input type="submit" >
+    </form>
+
+
+    <script>
+        function validateSelects(){
+
+          var option = document.form1.menu.value;
+
+          console.log(option);
+
+          if(option =="default"){
+            alert('you need to select an option');
+            document.form1.menu.focus();
+            return false;
+
+          }
+          else{
+            alert('thank you');
+            return true;
+          }
+
+
+
+
+        }
+
+    </script>
+</body>
+</html>

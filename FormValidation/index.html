@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Form Validation</title>
+</head>
+
+<body>
+  <script>
+    //only if the validate form returns true then the form is submitted
+    function validate() {
+      //get all the items
+      var email = document.form1.email.value;
+      var password = document.form1.password.value;
+      console.log(email, password);
+      //check if user has provided info
+      if (email == "" || password == ""){
+
+        document.getElementById('errorMessage').innerHTML = "you must provide email and password";
+
+      return false;
+    }
+    else{
+      alert('thank you');
+      document.getElementById('errorMessage').innerHTML = "thank you";
+      return true;
+    }
+
+
+
+
+
+    }
+  </script>
+  <form action="" name="form1" onSubmit="return validate();">
+    Email:<input type="text" name="email">
+    <br> Password: <input type="password" name="password">
+    <br>
+    <input type="submit" value="register">
+    <p id="errorMessage"></p>
+
+
+  </form>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Validate Numbers</title>
+</head>
+<body>
+
+    <form action="" name="form1" onsubmit="return validateNumber();">
+
+      <input type="text" name="number1">
+      <input type="text" name="number2">
+      <input type="submit" >
+    </form>
+
+
+    <script>
+        function validateNumber(){
+          var num1 = document.form1.number1.value;
+          var num2 = document.form1.number2.value;
+
+          console.log(num1);
+            console.log(num2);
+          //not an number
+          if(isNaN(num1)){
+            alert('you must provide numbers in num1!');
+            document.form1.number1.focus();
+            return false;
+          }
+          if(isNaN(num2)){
+            alert('you must provide numbers in num2!');
+              document.form1.number2.focus();
+            return false;
+          }
+          else{
+            alert('validated!');
+            return true;
+          }
+
+
+
+        }
+
+    </script>
+</body>
+</html>

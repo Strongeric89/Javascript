@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Products using DOM</title>
 </head>
+
 <body>
   <h1>welcome to the products page.</h1>
 
@@ -21,8 +23,7 @@
 
 
   <script>
-
-    function addProduct(){
+    function addProduct() {
       var parent = document.getElementById('nodeArea');
       var child = document.createElement('h3');
 
@@ -36,19 +37,20 @@
 
 
     }
-    function removeProduct(){
-        var parent = document.getElementById('nodeArea');
-          var item = document.getElementById('itemname').value;
-          var child = document.getElementById(item);
-            parent.removeChild(child);
+
+    function removeProduct() {
+      var parent = document.getElementById('nodeArea');
+      var item = document.getElementById('itemname').value;
+      var child = document.getElementById(item);
+      parent.removeChild(child);
 
 
 
 
 
     }
-
   </script>
 
 </body>
+
 </html>
