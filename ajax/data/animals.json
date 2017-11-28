@@ -1,0 +1,13 @@
+var animals = [
+  {
+    "name":"prince",
+    "species":"dog",
+    "color":"brown"
+  },
+  {
+    "name":"princess",
+    "species":"dog",
+    "color":"black/white"
+  }
+
+];

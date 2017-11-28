@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <input type="Button" name="button" onclick="generateTable();" value="CLICK ME TO GENERATE TABLE!">
+
+  <div id="nodeArea" style="width=500px; height=500px;">
+
+
+
+  </div>
+
+
+  <script>
+    colors = ["red", "yellow", "blue", "pink", "orange", "green"];
+
+
+    function generateTable() {
+      var parent = document.getElementById('nodeArea'); // find the div to put the table in
+      var child = document.createElement('table');
+
+      child.style.width = '100%';
+      child.style.border = '1px solid black';
+      child.setAttribute('id', 'table1'); // give the table an id so you can select it
+
+      //add rows to table
+      for (var i = 0; i < 6; i++) {
+        var tr = child.insertRow();
+        for (var j = 0; j < 6; j++) {
+          var td = tr.insertCell();
+
+          td.appendChild(document.createTextNode(colors[j]));
+          td.style.border = '3px solid black';
+          td.setAttribute('id', colors[j] + +i + '' + j);
+          td.style.backgroundColor = '' + colors[j];
+          td.onclick = handleOnClick;
+
+          parent.appendChild(child);
+
+        } //end inner for
+      } //end outter for
+
+    }
+
+
+
+    function handleOnClick() {
+
+      alert('ouch!you clicked me once, try again, notice the onclick is gone!!' + this.id);
+
+
+      //remove the attribute
+      var id = this.id;
+      //alert(id);
+      document.getElementById(id).onclick = null;
+      this.style.backgroundColor = "black";
+
+
+
+    }
+  </script>
+
+</body>
+
+</html>
