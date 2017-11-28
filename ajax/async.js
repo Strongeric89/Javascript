@@ -1,10 +1,11 @@
 var infoContainer = document.getElementById('info-area');
 var counter = 1;
 var url = "https://swapi.co/api/people/?page=";
+
 function getData() {
   var request = new XMLHttpRequest();
 
-  request.open("GET", url+counter, true);
+  request.open("GET", url + counter, true);
   //request.open("GET","data/animals.json",true);
 
 
@@ -14,10 +15,10 @@ function getData() {
     var data = JSON.parse(request.responseText);
     console.log(data);
 
-    if(data.next != null){
-        addHtml(data);
+    if (data.next != null) {
+      addHtml(data);
 
-    }else{
+    } else {
       var btn = document.getElementById('btn1');
       btn.style.display = "none";
     }
@@ -28,13 +29,9 @@ function getData() {
   request.send();
   counter++;
 
-
-
-
-
 }
 
-function addHtml(data){
+function addHtml(data) {
 
 
 
@@ -42,15 +39,14 @@ function addHtml(data){
 
 
 
-  for(var i=0;i< 9;i++)
-  {
-        info += "<p>"+data.results[i].name+"</p>";
+  for (var i = 0; i < 9; i++) {
+    info += "<p>" + data.results[i].name + "</p>";
   }
 
 
 
 
 
-  infoContainer.insertAdjacentHTML('beforeend',info);
+  infoContainer.insertAdjacentHTML('beforeend', info);
 
 }

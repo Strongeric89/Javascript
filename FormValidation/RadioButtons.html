@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Radio Buttons</title>
+</head>
+<body>
+  <form action="" name="form1" onsubmit="return validateForm();">
+    <input type="radio" value="male" name="option">Male
+    <input type="radio" value="female" name="option">Female
+    <input type="radio" value="rather not say" name="option">Rather not Say
+    <input type="submit">
+
+  </form>
+
+
+  <script>
+    function validateForm(){
+        var valid = false;
+        var options = document.form1.option; //returns an array
+        var opt = "";
+        console.log(document.form1.option.value);
+        for(var i=0;i<options.length;i++){
+          if(options[i].checked){
+            opt = options[i].value;
+            valid = true;
+            break;
+          }
+        }
+        if(valid){
+          alert('you selected an option '+ opt);
+          return true;
+        }else{
+          alert('you did not select an option');
+          return false;
+        }
+
+
+
+
+    }
+  </script>
+
+</body>
+</html>

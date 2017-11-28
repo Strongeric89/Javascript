@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>regex stuff</title>
+</head>
+<body>
+
+
+  <form action="" name="form1" onsubmit="return validateForm();">
+    <input type="text" name="email">email
+    <br>
+    <input type="password" name="password">password
+  <br>
+    <input type="submit">
+  </form>
+  <script>
+
+    /*
+
+        Regex stuff -
+        [] any one character
+        [^] any one char not in brackets
+        [0-9] matches any number
+        [a-z] matches any character from lower a - z
+        [A-Z] matches any character from upper A - Z
+
+        Quantifiers
+        x+  matches any string containing one or more
+        x* matches any string containing zero or more
+        x[N] matches any string containgin a sequence of N
+        x[3,5] matches any string containing a seq of at least 2 x's
+        x$ it matches any string with x at end of it
+        ^x matches any string with x at beginning of it
+
+        Metacharacters
+        . a single char
+        \s a whitespace char - tab, newline, space
+        \S non whitespace
+        \d a digit
+        \D a non digit
+        \w a word
+
+
+
+
+    */
+
+    function validateForm(){
+      //using Regex
+      var valid = false;
+      var email = document.form1.email.value;
+      var password = document.form1.password.value;
+
+      console.log(email,password);
+
+      var exp = /^[A-Za-z0-9]{8,15}$/; //starts with a-z and ends with a-z, contains numbers and min 8 char max 15
+      var expEmail = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/;
+
+      //alpha numeric - for addresses
+      // var expAlphaNum = /^[A-Za-z0-9\s]+$/; alpha numeric with a space
+
+
+
+
+      var result = exp.test(password);
+      var result2 = expEmail.test(email);
+
+      if(result && result2){
+        alert('valid email and password');
+        valid = true;
+
+      }else{
+            alert('not a valid email or password');
+            document.form1.password.focus();
+      }
+
+      if(valid){
+        return true;
+      }else{
+        return false;
+      }
+     }
+
+
+  </script>
+
+
+</body>
+</html>
