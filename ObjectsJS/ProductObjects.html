@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Creating Objects</title>
+</head>
+<body>
+
+  <script>
+    // first way - using Object
+    var product = new Object();
+    product.id = "1";
+    product.name = "mobile phone";
+    product.description = "smart phone one plus 3";
+    product.price = "399.00";
+
+  //  document.write(product.name, product.description);
+
+
+    //second way using functions
+    function prod(id,name,description,price){
+      this.id = id;
+      this.name = name;
+      this.description = description;
+      this.price = price;
+
+    }
+
+    var product2 = new prod("2","Tv","smart tv with camera","799");
+  //  document.write(product2.name);
+
+
+
+    //third way - JSON - literal (PREFARED WAY)
+    var product3 = {
+      id:"3",
+      name:"chromecast",
+      description:"a casting device for viewing movies",
+      price:79.99,
+      calculateDisc:function(percentage){
+        var disc = this.price / 100 * percentage;
+        document.write('<br> after discount price is: ' + (this.price - disc) + '<br>');
+      },
+      displayDetails:function(){
+
+          document.write(this.name + '<br>');
+          document.write(this.price + '<br>');
+          this.calculateDisc(30);
+      }
+
+
+    };
+
+  product3.displayDetails();
+
+  //add properties on the fly
+  product3.owner = "eric";
+  document.write(product3.owner);
+
+
+
+  </script>
+
+</body>
+</html>

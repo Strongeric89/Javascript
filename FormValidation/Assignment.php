@@ -1,19 +1,23 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+  <!-- <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
   <title>Form Validation Assignment</title>
 </head>
 
 <body>
   <h2>Enter your details</h2>
-  <form action="" name="form1" onsubmit="return validateForm();">
+  <?php echo 'hello'; ?>
+<!--
+  <form  method="post" action="Assignment.php" name="form1" onsubmit="return validateForm();">
     Email:<input type="text" name="email"><br> Password: <input type="password" name="password"><br> Phone: <input type="text" name="phone"><br>
-    <input type="submit">
-  </form>
+    <input type="submit" name="submit">
+  </form> -->
 
   <script>
     function validateForm() {
@@ -116,6 +120,20 @@
 
     }
   </script>
+
+  <?php
+
+      //after javascript Validation
+      if(isset($_POST['submit'])){
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $phone = $_POST['phone'];
+
+            echo "sent";
+      }
+
+   ?>
+
 
 </body>
 
